@@ -34,7 +34,7 @@ const UploadModal = () => {
     },
   });
 
-  const onChange = () => {
+  const onChange = (open: boolean) => {
     if (!open) {
       reset();
       uploadModal.onClose();
@@ -108,6 +108,7 @@ const UploadModal = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <Modal
       title="Add a song"
