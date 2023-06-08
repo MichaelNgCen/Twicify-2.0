@@ -56,6 +56,11 @@ const AuthModal = () => {
             },
           }}
         />
+        <div>
+          Demo Email: KangHaerin@New.Jeans
+          <br />
+          Demo Password: NewJeans
+        </div>
       </Modal>
     </div>
   );
