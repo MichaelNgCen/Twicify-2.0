@@ -1,11 +1,14 @@
 import Header from "@/components/Header";
 import React from "react";
-
 import Image from "next/image";
+import getLikedSongs from "@/actions/getLikedSongs";
+import LikedContent from "./components/LikedContent";
 
 export const revalidate = 0;
 
-const Liked = () => {
+const Liked = async () => {
+  const songs = await getLikedSongs();
+
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <Header>
@@ -28,6 +31,7 @@ const Liked = () => {
           </div>
         </div>
       </Header>
+      <LikedContent songs={songs} />
     </div>
   );
 };
