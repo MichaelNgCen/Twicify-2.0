@@ -9,9 +9,15 @@ const Player = () => {
   const player = usePlayer();
   const { song } = useGetSongsById(player.activeId);
 
-  const songUrl = useLoadSongUrl;
+  const songUrl = useLoadSongUrl(song!);
 
-  return <div>PLAYER</div>;
+  if (!song || !songUrl || !player.activeId) return null;
+
+  return (
+    <div className="fixed bottom-0 bg-black w-full py-2 h-[80px] px-4">
+      PLAYER
+    </div>
+  );
 };
 
 export default Player;
