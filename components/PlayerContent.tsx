@@ -23,6 +23,19 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
   const player = usePlayer();
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
 
+  const onPlayNext = () => {
+    if (player.ids.length === 0) return;
+
+    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    const nextSong = player.ids[currentIndex + 1];
+
+    if (!nextSong) {
+      return player.setId(player.ids[0]);
+    }
+
+    player.setId(nextSong);
+  };
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
@@ -53,7 +66,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         </div>{" "}
         <AiFillStepForward
           size={30}
-          onClick={() => {}}
+          onClick={onPlayNext}
           className="text-neutral-400 cursor-pointer hover:text-white transition"
         />
       </div>
