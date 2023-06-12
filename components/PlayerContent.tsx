@@ -2,6 +2,8 @@
 
 import { Song } from "@/types";
 import React from "react";
+import MediaItem from "./MediaItem";
+import LikeButton from "./LikeButton";
 
 interface PlayerContentProps {
   song: Song;
@@ -9,7 +11,16 @@ interface PlayerContentProps {
 }
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
-  return <div>Player Content</div>;
+  return (
+    <div className="grid grid-cols md:grid-cols-3 h-full">
+      <div className="flex w-full justify-start">
+        <div className="flex items-center gap-x-4">
+          <MediaItem data={song} onClick={() => {}} />
+          <LikeButton songId={song.id} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PlayerContent;
