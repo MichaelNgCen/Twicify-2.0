@@ -6,6 +6,7 @@ import MediaItem from "./MediaItem";
 import LikeButton from "./LikeButton";
 
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
+import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 
 interface PlayerContentProps {
   song: Song;
@@ -30,8 +31,27 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
           <Icon size={30} className="text-black" />
         </div>
       </div>
+      <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">
+        <AiFillStepBackward
+          onClick={() => {}}
+          size={30}
+          className="text-neutral-400"
+        />
+        <div
+          onClick={() => {}}
+          className="flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer"
+        >
+          <Icon size={30} className="text-black" />
+        </div>{" "}
+        <AiFillStepForward
+          size={30}
+          onClick={() => {}}
+          className="text-neutral-400 cursor-pointer hover:text-white transition"
+        />
+      </div>
     </div>
   );
 };
 
 export default PlayerContent;
+3;
