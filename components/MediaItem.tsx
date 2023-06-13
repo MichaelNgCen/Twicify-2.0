@@ -17,6 +17,7 @@ const MediaItem: React.FC<MediaItemProps> = ({ data, onClick }) => {
     if (onClick) {
       return onClick(data.id);
     }
+    
   };
   return (
     <div
